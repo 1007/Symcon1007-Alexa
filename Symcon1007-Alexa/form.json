@@ -10,7 +10,7 @@
   
   "actions":
   [
-    { "type": "Button", "label": "Update", "onClick": "ALX_Update($id);" },
+    { "type": "Button", "label": "Copy Default Config", "onClick": "ALX_Update($id);" },
   ],
 
   "status":
