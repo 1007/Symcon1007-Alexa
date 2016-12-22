@@ -2,11 +2,19 @@
 
 ## 1. Systemanforderungen
 - IP-Symcon ab Version 4.x
-- Funktionierendes Skill und Lambda
+- Funktionierendes Skill/Lambda/Phyton
 
 ## 2. Konfiguration Skill/Lamda/Phyton
 
-https://xxxxxxxxxxxx.ipmagic.de/hook/alexacontrol?control=discover
+* URLs im SKILL
+  *  POLICY
+  
+                    xxxxxxxxxxxx.ipmagic.de/hook/alexacontrol?control=policy
+
+
+
+
+.......xxxxxxxxxxxx.ipmagic.de/hook/alexacontrol?control=discover
 
 https://xxxxxxxxxxxx.ipmagic.de/hook/alexacontrol?control=control
 
