@@ -20,17 +20,7 @@
               ..................ipmagic.de/hook/alexacontrol?control=login
   
   * TOKEN
-  
- 
 
-https://xxxxxxxxxxxx.ipmagic.de/hook/alexacontrol?control=policy
+              ..................ipmagic.de/hook/alexacontrol?control=token
 
-
-https://xxxxxxxxxxxx.ipmagic.de/hook/alexacontrol?control=terms
-
-
-https://xxxxxxxxxxxx.ipmagic.de/hook/alexacontrol?control=login
-
-
-https://xxxxxxxxxxxx.ipmagic.de/hook/alexacontrol?control=token
 
