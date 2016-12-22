@@ -1,5 +1,5 @@
 <?
-	IPSUtils_Include ("AlexaConfig.ips.php");
+	IPSUtils_Include ("Symcon1007-AlexaConfig.ips.php");
 
 	GLOBAL $AlexaConfig;
 
@@ -198,7 +198,7 @@ function ModulNameIPSLight($device,$value)
 //******************************************************************************
 function AlexaControlDiscover()
 	{
-	IPSUtils_Include ("AlexaConfig.ips.php");
+	IPSUtils_Include ("Symcon1007-AlexaConfig.ips.php");
 
 	$json = generateJSONForDiscoveredAlexaDevices();
 	
