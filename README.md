@@ -7,22 +7,26 @@
 ## 2. Konfiguration Skill/Lamda/Phyton
 
 * URLs im SKILL
-  *  POLICY
+  * POLICY
+  ..................ipmagic.de/hook/alexacontrol?control=policy
+
+  * TERMS
+  ..................ipmagic.de/hook/alexacontrol?control=terms
+
+  * LOGIN
   
-                    xxxxxxxxxxxx.ipmagic.de/hook/alexacontrol?control=policy
-
-
-
-
-.......xxxxxxxxxxxx.ipmagic.de/hook/alexacontrol?control=discover
-
-https://xxxxxxxxxxxx.ipmagic.de/hook/alexacontrol?control=control
+  * TOKEN
+  
+ 
 
 https://xxxxxxxxxxxx.ipmagic.de/hook/alexacontrol?control=policy
 
+
 https://xxxxxxxxxxxx.ipmagic.de/hook/alexacontrol?control=terms
 
+
 https://xxxxxxxxxxxx.ipmagic.de/hook/alexacontrol?control=login
+
 
 https://xxxxxxxxxxxx.ipmagic.de/hook/alexacontrol?control=token
 
