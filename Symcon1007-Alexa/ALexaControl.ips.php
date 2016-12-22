@@ -61,25 +61,36 @@ function AlexaControlControl($deviceId,$value)
 		{
 			case  "FS20 Schalter"	:	ModulNameFS20($device,$value);
 										break;
-
 			case  "ALLNET Schalter"	:	ModulNameALLNET($device,$value);
-										break;
-		
+										break;		
 			case "IPSLight"			:  	ModulNameIPSLight($device,$value);
 										break;
 			case "VARIABLE"			:  	ModulNameVariable($device,$value);
+										break;
+			case "SCRIPT"			  :  	ModulNameScript($device,$value);
 										break;
 		
 		}
 		
 	}
-	
+
+
+function ModulNameScript($device,$value)	
+  {
+  $deviceId = $device[8];
+  
+  IPS_RunScript($deviceId);
+  }
+  
+  
 function ModulNameVariable($device,$value)
 	{
 	$deviceId = $device[8];
 
 	SetValue($deviceId, $value);	
 	}
+
+
 	
 function ModulNameFS20($device,$value)
 	{
@@ -90,11 +101,10 @@ function ModulNameFS20($device,$value)
 
 	$deviceId = $device[8];
 	
-	if ( $debug ) IPS_LogMessage(basename(__FILE__), "ModulNameFS20 [". $deviceId . "] Wert: [" .$value ."]" );
+	if ( $debug ) IPS_LogMessage(basename(__FILE__), "ModulNameFS20 [". $deviceId . "] Zustand: [" .$value ."]" );
 	
-	$component =  new IPSComponentSwitch_FS20($deviceId);
-	$component->SetState($value);
-	
+  FS20_SwitchMode($deviceId,$value);
+  
 	}
 
 function ModulNameALLNET($device,$value)
@@ -108,8 +118,8 @@ function ModulNameALLNET($device,$value)
 	
 	if ( $debug ) IPS_LogMessage(basename(__FILE__), "ModulNameALLNET [". $deviceId . "] Wert: [" .$value ."]" );
 	
-	$component =  new IPSComponentSwitch_ALLNET($deviceId);
-	$component->SetState($value);
+  ALL_SwitchMode($deviceId,$value);
+
 	
 	}
 
@@ -119,14 +129,19 @@ function ModulNameIPSLight($device,$value)
 	{
 	GLOBAL $debug;
 
-	$lichtname = $device[8];
+	$lichtid   = $device[8];
 	$lichttype = false;
 	
 	IPSUtils_Include ('IPSLight.inc.php', 'IPSLibrary::app::modules::IPSLight');
 
 	$LightArray = IPSLight_GetLightConfiguration();
+
+  $lichtname = IPS_GetName($lichtid);
+  $parent    = IPS_GetParent($lichtid);
+ 
+  
 	foreach( $LightArray as $Light )
-		{
+		{ 
 		if ( $Light[0] == $lichtname )
 			{ 
 			$lichttype =  $Light[2];
@@ -134,11 +149,12 @@ function ModulNameIPSLight($device,$value)
 			}	
 		}
 
-	if ( $debug ) IPS_LogMessage(basename(__FILE__), "ModulNameIPSLight [". $lichtname . "] Wert: [" .$value ."] Type : [".$lichttype."]" );
+
+	if ( $debug ) IPS_LogMessage(basename(__FILE__), "ModulNameIPSLight [". $lichtid . "] Wert: [" .$value ."] Type : [".$lichttype."]".$levelid );
 
 	if ( $lichttype == "Switch" )
 		{
-		IPSLight_SetSwitchByName($lichtname, $value);
+		IPSLight_SetSwitch($lichtid, $value);
 		}
 		
 
@@ -146,12 +162,12 @@ function ModulNameIPSLight($device,$value)
 		{
 		if ( $value == 0 OR $value == 1 )
 			{
-			IPSLight_DimAbsoluteByName($lichtname,100);
-			IPSLight_SetSwitchByName($lichtname, $value);		
+			IPSLight_SetDimmerAbs($levelid,100);
+			IPSLight_SetSwitch($lichtid, $value);		
 			}
 		else
 			{
-			IPSLight_DimAbsoluteByName($lichtname,$value);			
+			IPSLight_SetDimmerAbs($levelid,$value);			
 			}			
 		}
 
@@ -162,7 +178,7 @@ function ModulNameIPSLight($device,$value)
 		
 		if ( $value == 0 OR $value == 1)
 			{
-			IPSLight_SetSwitchByName($lichtname, $value);		
+			IPSLight_SetSwitch($lichtid, $value);		
 
 			
 			//$farbe = 0;
