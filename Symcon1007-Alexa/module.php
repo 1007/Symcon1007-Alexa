@@ -26,14 +26,14 @@
 			//Never delete this line!
 			parent::ApplyChanges();
 
-      $id = $this->RegisterVariableInteger("name"    , "Geschlecht","WITHINGS_M_Gender",2);
+      //$id = $this->RegisterVariableInteger("name"    , "Geschlecht","WITHINGS_M_Gender",2);
       
       $script = $_IPS['SELF'];
       $script = "[".$script."]"; 
       $this->Logging($script);
        
-      $sid = $this->RegisterScript("Hook", "Hook", "<? //Do not delete or modify.\ninclude(IPS_GetKernelDirEx().\"scripts/__ipsmodule.inc.php\");\ninclude(\"../modules/SymconMisc/Geofency/module.php\");\n(new Geofency(".$this->InstanceID."))->ProcessHookData();");
-			$this->RegisterHook("/hook/xxxxxxxxxx", $sid);
+      $sid = $this->RegisterScript("Hook", "Hook", "<? //Do not delete or modify.\ninclude(IPS_GetKernelDirEx().\"scripts/__ipsmodule.inc.php\");\ninclude(\"../modules/Symcon1007-Alexa/Symcon1007-Alexa/ALexaControl.ips.php\");\n");
+			$this->RegisterHook("/hook/alexacontrol", $sid);
 	
 
       $this->Logging("ApplyChanges");
@@ -122,7 +122,7 @@
 				$hooks = json_decode(IPS_GetProperty($ids[0], "Hooks"), true);
 				$found = false;
 				foreach($hooks as $index => $hook) {
-					if($hook['Hook'] == "/hook/ttttttttt") {
+					if($hook['Hook'] == "/hook/alexacontrol") {
 						if($hook['TargetID'] == $TargetID)
 							return;
 						$hooks[$index]['TargetID'] = $TargetID;
@@ -130,7 +130,7 @@
 					}
 				}
 				if(!$found) {
-					$hooks[] = Array("Hook" => "/hook/tttttttt", "TargetID" => $TargetID);
+					$hooks[] = Array("Hook" => "/hook/alexacontrol", "TargetID" => $TargetID);
 				}
 				IPS_SetProperty($ids[0], "Hooks", json_encode($hooks));
 				IPS_ApplyChanges($ids[0]);
