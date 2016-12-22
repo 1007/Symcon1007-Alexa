@@ -1,5 +1,10 @@
 # Symcon1007 - Alexa
 
+## 1. Systemanforderungen
+- IP-Symcon ab Version 4.x
+- Funktionierendes Skill und Lambda
+
+## 2. Konfiguration Skill/Lamda/Phyton
 
 https://xxxxxxxxxxxx.ipmagic.de/hook/alexacontrol?control=discover
 
