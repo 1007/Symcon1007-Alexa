@@ -2,7 +2,7 @@
   "elements":
   [
 
-
+    
 
     { "type": "Label"             , "label":  "Fehlerlogging" },
     { "type": "CheckBox"          , "name" :  "Logging", "caption": "Logging (../logs/Alexa/Alexa.log)" },
@@ -15,9 +15,9 @@
 
   "status":
     [
-        { "code": 101, "icon": "active", "caption": "Withings wird erstellt..." },
-        { "code": 102, "icon": "active", "caption": "Withings ist aktiv" },
-        { "code": 202, "icon": "error",  "caption": "Userdaten falsch" },
+        { "code": 101, "icon": "active", "caption": "Alexa wird erstellt..." },
+        { "code": 102, "icon": "active", "caption": "Alexa ist aktiv" },
+        
     ]
 
 
