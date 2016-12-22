@@ -8,6 +8,7 @@
 
 * URLs im SKILL
   * POLICY
+  
               ..................ipmagic.de/hook/alexacontrol?control=policy
 
   * TERMS
