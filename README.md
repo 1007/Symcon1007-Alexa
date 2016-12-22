@@ -12,7 +12,8 @@
               ..................ipmagic.de/hook/alexacontrol?control=policy
 
   * TERMS
-  ..................ipmagic.de/hook/alexacontrol?control=terms
+  
+        ..................ipmagic.de/hook/alexacontrol?control=terms
 
   * LOGIN
   
