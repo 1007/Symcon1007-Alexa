@@ -51,9 +51,8 @@
 
 
       $this->Logging("ApplyChanges");
-      $this->SetStatus(102);
-      //Update
-     	$this->Update();
+      //$this->SetStatus(102);
+      
 
        }
 
