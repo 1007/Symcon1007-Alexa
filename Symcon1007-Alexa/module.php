@@ -60,19 +60,7 @@
     //**************************************************************************
     //
     //**************************************************************************    
-    public function Update()
-      {
 
- 	      $source = IPS_GetKernelDir() ."/modules/Symcon1007-Alexa/Symcon1007-Alexa/Symcon1007-AlexaConfig.ips.php";
-	     $target = IPS_GetKernelDir() ."/scripts/Symcon1007-AlexaConfig.ips.php";
-
-	     if ( !file_exists($target) )
-		        copy($source,$target);
-
-      $this->Logging("Update Config");
-                
-      return true;
-      }
       
       
     //**************************************************************************
